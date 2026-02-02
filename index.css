@@ -1,0 +1,119 @@
+:root {
+  --yellow: hsl(47, 88%, 63%);
+  --white: hsl(0, 0%, 100%);
+  --gray-500: hsl(0, 0%, 42%);
+  --gray-950: hsl(0, 0%, 7%);
+
+  --radius: 20px;
+  --shadow: 8px 8px 0 var(--gray-950);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--yellow);
+  color: var(--gray-950);
+  font-family: "Outfit", sans-serif;
+  line-height: 1.6;
+}
+
+.layout-center {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 5vw, 32px);
+  padding-bottom: 72px;
+}
+
+.card {
+  width: min(100%, 327px);
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: grid;
+  gap: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--gray-950);
+}
+
+.card__image {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+.card__meta {
+  display: grid;
+  gap: 8px;
+}
+
+.card__tag {
+  width: fit-content;
+  background: var(--yellow);
+  font-weight: 800;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.card__date {
+  font-size: 14px;
+}
+
+.card__title {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.card__description {
+  color: var(--gray-500);
+  font-size: 14px;
+}
+
+.card__author {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.card__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.attribution {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  font-size: 12px;
+  text-align: center;
+  color: var(--gray-950);
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: min(100%, 384px);
+  }
+
+  .card__title {
+    font-size: 24px;
+  }
+
+  .card__description {
+    font-size: 15px;
+  }
+}
